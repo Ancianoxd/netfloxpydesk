@@ -33,7 +33,7 @@ Como usuario,
 quiero que la aplicación **NetfloxPyDesk** tenga ajustes iniciales en el archivo principal (main.py) que incluyan la incorporación del nuevo menú "Movies",  
 para mejorar la navegación y ampliar las opciones disponibles en la interfaz, aprovechando la flexibilidad de **PyQt6**.
 
-![Image](img/netfloxpydesk_captura_pantalla_01.PNG)
+![Image](img/netflox2.PNG)
 
 ### 🎯 Estimación:
 🕒 **Esfuerzo estimado:** 5 puntos de historia  
@@ -86,3 +86,82 @@ para mejorar la navegación y ampliar las opciones disponibles en la interfaz, a
 ### 🔗 Referencias:
 🔹 **Commit:** [Ajustes Iniciales main - Menú Movies #2](https://github.com/tu-usuario/netfloxpydesk/commit/hash)  
 🔹 **Repositorio:** [GitHub - NetfloxPyDesk](https://github.com/tu-usuario/netfloxpydesk)
+
+### Historia de Usuario
+Como usuario,  
+quiero visualizar un listado de películas en una pantalla exclusiva al hacer clic en el menú "Movies",  
+para ver de forma clara y ordenada la información básica de las películas (Título, Año y Duración) sin distracciones adicionales, aprovechando un estilo dark moderno.
+
+![Image](img/netflox1.PNG)
+
+### 🎯 Estimación:
+🕒 **Esfuerzo estimado:** 3 puntos de historia  
+👕 **Tamaño:** Pequeño (S)
+
+### 🔗 Dependencias:
+- Acceso al repositorio en GitHub.
+- Configuración inicial de Python 3.12 en el entorno de desarrollo.
+- Integración de la librería **PyQt6** y módulos del template **uixcore**.
+
+### 📅 Fecha Límite:
+⏳ **Fecha estimada de finalización:** 26 de Junio de 2025  
+👤 **Responsable:** @Ancianoxd 
+
+### 🏆 Sprint / Milestone:
+📌 **Sprint:** Sprint 3 - Listado y Visualización  
+🏁 **Milestone:** Versión 0.3 - Listado de Películas v0
+
+### ✅ Definición de Hecho:
+- [x] Se han realizado ajustes en el archivo main.py, incluyendo la actualización del título a **NetfloxPyDesk - TuNombre** y el tamaño de la ventana a `1020x700`.
+- [x] Cambiar la iniciales “SC” del icono de perfil, por tus iniciales.
+- [x] Al iniciar el programa, por defecto debe estar seleccionado el botón de películas.
+- [x] Al hacer clic en "Movies", se despliega una pantalla única que contiene únicamente la grilla.
+- [x] La grilla muestra tres columnas: **Title**, **Year** (release_date) y **Duration**.
+- [x] La grilla no permite edición ni ordenamiento (la acción de doble clic no activa edición).
+- [x] Se carga datos de prueba hardcode (lista de diccionarios en memoria).
+- [x] La grilla respeta el estilo dark definido (ver Tareas).
+- [ ] Agregar la correspondiente documentación en el README.md.
+- [ ] El módulo puede ejecutarse de forma independiente para pruebas.
+
+### 📌 Tareas:
+- [x] Implementar la clase `MovieListPage` que define la grilla de películas.
+- [x] Configurar el QTableWidget para que no permita edición ni ordenamiento.
+- [x] Cargar datos de prueba hardcode en la grilla.
+- [x] Aplicar el siguiente estilo dark a la grilla (table): 
+      QTableWidget {
+                background-color: rgb(39, 44, 54);
+                padding: 10px;
+                border-radius: 5px;
+                gridline-color: rgb(44, 49, 60);
+                border-bottom: 1px solid rgb(44, 49, 60);
+                color: rgb(210, 210, 210);
+            }
+      QTableWidget::item:selected {
+                background-color: rgb(85, 170, 255);
+            }
+      QHeaderView::section {
+                background-color: rgb(27, 29, 35);
+                border: 1px solid rgb(44, 49, 60);
+                color: rgb(210, 210, 210);
+                padding: 4px;
+            }
+
+- [x] Integrar el módulo en el botón "Movies" del menú principal.
+- [x] Realizar pruebas de ejecución independiente y dentro de la aplicación.
+
+### 🔗 Referencias:
+🔹 **Commit:** [Listado de Películas v0 - Visualizacion de Grilla en Menú Movies #3](https://github.com/Ancianoxd/netfloxpydesk/commit/hash)  
+🔹 **Repositorio:** [GitHub - NetfloxPyDesk](https://github.com/Ancianoxd/netfloxpydesk)
+
+
+**Paso 6: Subir el Proyecto a GitHub**
+
+Configurar Git y sube el proyecto:
+
+```bash
+git remote add origin https://github.com/Ancianoxd/netfloxpydesk.git
+git add .
+git commit -m "Listado de Películas v0 - Visualizacion de Grilla en Menú Movies #3"
+git branch -M main   
+git push -u origin main
+```

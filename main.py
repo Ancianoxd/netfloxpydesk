@@ -4,6 +4,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PyQt6.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt6.QtWidgets import *
+from movies_module import *
 
 # GUI FILE
 from app_modules import *
@@ -27,13 +28,13 @@ class MainWindow(QMainWindow):
         ## ==> END ##
 
         ## SET ==> WINDOW TITLE
-        self.setWindowTitle('NetfloxPyDesk')
-        UIFunctions.labelTitle(self, 'NetfloxPyDesk')
-        UIFunctions.labelDescription(self, 'Mi Programa')
+        self.setWindowTitle('NetfloxPyDesk - Mariano')
+        UIFunctions.labelTitle(self, 'NetfloxPyDesk - Mariano')
+        UIFunctions.labelDescription(self, 'Mariano')
         ## ==> END ##
 
         ## WINDOW SIZE ==> DEFAULT SIZE
-        startSize = QSize(1024,  720)
+        startSize = QSize(1020,  720)
         self.resize(startSize)
         self.setMinimumSize(startSize)
         # UIFunctions.enableMaximumSize(self, 500, 720)
@@ -55,7 +56,7 @@ class MainWindow(QMainWindow):
         ## ==> END ##
 
         # START MENU => SELECTION
-        UIFunctions.selectStandardMenu(self, "btn_home")
+        UIFunctions.selectStandardMenu(self, "btn_movies")
         ## ==> END ##
 
         ## ==> START PAGE
@@ -63,7 +64,7 @@ class MainWindow(QMainWindow):
         ## ==> END ##
 
         ## USER ICON ==> SHOW HIDE
-        UIFunctions.userIcon(self, "SC", "", True)
+        UIFunctions.userIcon(self, "MA", "", True)
         ## ==> END ##
 
 
@@ -147,9 +148,9 @@ class MainWindow(QMainWindow):
 
         # PAGE NEW USER
         if btnWidget.objectName() == "btn_movies":
-            empty_widget=QtWidgets.QWidget()
-            self.ui.stackedWidget.addWidget(empty_widget)
-            self.ui.stackedWidget.setCurrentWidget(empty_widget)
+            grilla = MovieListPage()
+            self.ui.stackedWidget.addWidget(grilla)
+            self.ui.stackedWidget.setCurrentWidget(grilla)
             UIFunctions.resetStyle(self, "btn_movies")
             UIFunctions.labelPage(self, "Movies")
             UIFunctions.labelDescription(self, "List of Movies")
